@@ -4,12 +4,13 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     'NAME'	=> 'Class::DBI::Extension',
     'VERSION_FROM' => 'lib/Class/DBI/Extension.pm', # finds $VERSION
-    'PREREQ_PM' => 'Class::DBI',
+    'PREREQ_PM' => {
+	'Class::DBI' => 0,
+    },
     'dist' => {
 	PREOP => build_docs(),
     },
 );
-
 
 sub build_docs {
     return <<EOF
